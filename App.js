@@ -42,7 +42,6 @@ const AboutComp = ({ navigation, route }) => {
               </View>);
 };
 const EvolutionComp = ({ navigation, route }) =>{  }
-const AllImageComp = ({ navigation, route }) =>{  }
 const SearchComp = ({ navigation, route }) =>{  }
 
 
