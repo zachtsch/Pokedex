@@ -12,11 +12,11 @@ const Stack = createNativeStackNavigator();
 
 
 const HomeScreen = ({ navigation }) => {
-  const selectPokemons = [...Array(parseInt(450)).keys()].map(i=>
+  const [_,...selectPokemons] = [...Array(450).keys()].map(i=>
     <TouchableOpacity onPress={() => navigation.navigate('About', { id : i })}>
       <SelectPokemon id = {i} navigation = {navigation}/>
     </TouchableOpacity>);
-  return(<ScrollView>  {selectPokemons}  </ScrollView>)
+  return(<ScrollView>{selectPokemons}</ScrollView>)
 };
 
 
