@@ -26,7 +26,7 @@ const SelectPokemon = ({ id }) =>{
       useEffect(() => fetch('https://pokeapi.co/api/v2/pokemon/'+id)
                .then(response => response.json())
                .then(data => data['sprites']['other']['official-artwork']['front_default'])
-               .then(url => setImageURL(url)));
+               .then(url => setImageURL(url)),[]);
       return (<Image source={{uri: imageURL}} style={{width: 100, height: 100}}/>);
 }
 
@@ -35,7 +35,7 @@ const AboutComp = ({ navigation, route }) => {
       useEffect(() => fetch('https://pokeapi.co/api/v2/pokemon/'+route.params.id)
                .then(response => response.json())
                .then(data => data['sprites']['front_default'])
-               .then(url => setImageURL(url)));
+               .then(url => setImageURL(url)),[]);
       return (<View>
                 <Image source={{uri: imageURL}} style={{width: 400, height: 400}}/>
                 <Button title="Go back" onPress={() => navigation.goBack()} />
